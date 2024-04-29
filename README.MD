@@ -1,0 +1,2 @@
+- run `(cd menu && pnpm build) && (cd theme && pnpm build)`
+- then run something to serve the index.html in a server, e.g. `npx serve`

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module" crossorigin src="./menu/dist/plugin.js"></script>
+    <script type="module" crossorigin src="./theme/dist/plugin.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        window.app = Vue.createApp({
+          setup() {
+            return {};
+          },
+          template: `
+        <div>
+            <div style="border: 1px solid gainsboro; margin:1rem;">
+              <div>ThemeWrapper component doesn't load MenuLauncher component....</div>
+              <ThemeWrapper></ThemeWrapper>
+            </div>
+            <div style="border: 1px solid gainsboro; margin:1rem;">
+              <div>Root component is able to render MenuLauncher... But above "ThemeWrapper" component cannot render it Why???</div>
+              <MenuLauncher></MenuLauncher>    
+            </div>
+        </div>`,
+        });
+        window.app.component('MenuLauncher', window.externalComponents.MenuLauncher)
+        window.app.component('ThemeWrapper', window.externalComponents.ThemeWrapper)
+        window.app.mount("#app");
+      });
+    </script>
+  </body>
+</html>
