@@ -1,2 +1,4 @@
-- run `(cd menu && pnpm build) && (cd theme && pnpm build)`
-- then run something to serve the index.html in a server, e.g. `npx serve`
+- run this command `(cd menu && pnpm install) && (cd theme && pnpm install)`
+- then run `(cd menu && pnpm build) && (cd theme && pnpm build)`
+- then run something to serve the `index.html` in a server, e.g. `npx serve`
+- then open the localhost that served the `index.html`
